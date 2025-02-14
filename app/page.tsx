@@ -35,18 +35,19 @@ export default function Home() {
           <form className="flex flex-col gap-4" action={createJob}>
             <div>
               <Label>Title</Label>
-              <Input placeholder="Enter your Title" name="title" />
+              <Input required placeholder="Enter your Title" name="title" />
             </div>
             <div>
               <Label>Description</Label>
               <Textarea
                 placeholder="Enter your description"
                 name="description"
+                required
               />
             </div>
             <div>
               <Label>Status</Label>
-              <Select name="status">
+              <Select required name="status">
                 <SelectTrigger className="w-full">
                   <SelectValue placeholder="Select Status" />
                 </SelectTrigger>
