@@ -9,5 +9,7 @@ export const blogSchema = z.object({
     .string()
     .min(10, "Description must be at least 10 characters")
     .max(500, "Description must be at most 500 characters"),
-  status: z.enum(["draft", "published", "archived"]),
+  status: z.enum(["draft", "published", "archived"], {
+    errorMap: () => ({ message: "Please select a valid status" }),
+  }),
 });
